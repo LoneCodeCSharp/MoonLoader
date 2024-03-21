@@ -1,0 +1,58 @@
+﻿<Window x:Class="MoonLoader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MoonLoader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="5"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:10" Value="342"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <!-- This one triggers after Window appears -->
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Border>
+        
+        <Border.Background>
+            <ImageBrush ImageSource="Img/space1.jpg"/>
+        </Border.Background>
+        <Grid>
+            
+            <TextBlock Text="M" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"
+                       FontWeight="Bold" FontSize="40" Margin="0 0 300 0"/>
+            <Ellipse x:Name="moon" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30"
+                     Height="30" Stroke="White" StrokeThickness="4" Margin="0 0 120 120"/>
+            <TextBlock Text="N" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"
+                       FontWeight="Bold" FontSize="40" Margin="300 0 0 0"/>
+            <Ellipse Width="172" Height="172" StrokeThickness="3" Stroke="White"/>
+            <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="130" Height="130"
+                    CornerRadius="65" Background="White" Opacity="0.2"/>
+            
+            
+            
+            
+            
+            <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="140" Height="140" CornerRadius="70" Background="White" Opacity="0.1"/>
+            <Image Source="Img/moon.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120"/>
+            <Border BorderThickness="2" BorderBrush="White" Width="350" Height="20" VerticalAlignment="Bottom" Margin="0 0 0 20" CornerRadius="10">
+                <Border x:Name="border" Background="White" Width="5" Height="12" VerticalAlignment="Center" HorizontalAlignment="Left" CornerRadius="6" Margin="2"/>
+            </Border>
+            
+            
+            
+            
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="L O A D I N G . . ." Foreground="White" FontWeight="DemiBold" FontSize="12" Margin="0 0 250 45"/>
+        </Grid>
+    </Border>
+    
+</Window>
+    
